@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Landing Page</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles1.css">
+</head>
+<body>
+    <!-- Enter Screen -->
+    <div id="enter-screen" class="enter-screen">
+        <button id="enter-button">Click to Enter</button>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content" class="main-content hidden">
+        <!-- Volume Control -->
+        <div id="volume-control" class="volume-control">
+            <img src="assets/volume-low-white-icon.png" alt="Volume" class="volume-icon">
+            <input type="range" id="volume-slider" class="volume-slider hidden" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <!-- Hintergrund Video -->
+        <video id="bg-video" muted loop autoplay poster="./assets/poster.png">
+        <!-- <source src="https://github.com/lknknm/link-in-bio/raw/main/assets/links-bg.webm" type="video/webm"> -->
+        <source src="assets/video3.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        <!-- Your existing content -->
+        <div id="vanta-bg">
+            <header>
+                <div class="profile-container">
+                    <img src="https://avatars.githubusercontent.com/u/105929625?s=400&u=f92b55a47c328c10e52d32aca0ba2894a972b6f9&v=4" alt="Profile picture" class="profile-picture"/>
+                    <img src="assets/icon-preset.png" alt="Icon overlay" class="icon-overlay"/>
+                </div>
+                <h3>@erik</h3>
+                <p>˖˳·˖ be your own inspiration ˖·˳˖</p>
+            </header>
+
+            <!-- Main Content Section -->
+            <main>
+            <section>
+                <div class="container">
+                    <div class="tiles">
+                        <!-- Portfolio Tile -->
+                        <div class="tile">
+                            <a href="https://erikdevelopment.github.io/portfolio/" class="tile-content">
+                                <div class="icon-wrapper">
+                                    <!-- Portfolio Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                    </svg>
+                                </div>
+                                <div class="text-content">
+                                    <h2>Portfolio</h2>
+                                    <p>Explore my projects and designs</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Music Tile -->
+                        <div class="tile">
+                            <a href="https://open.spotify.com/user/h8vqkv26638aya6oi6hzc9ndi?si=32952e33a6fb4eb7" class="tile-content">
+                                <div class="icon-wrapper">
+                                    <!-- Music Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"/>
+                                        <circle cx="17" cy="7" r="5"/>
+                                    </svg>
+                                </div>
+                                <div class="text-content">
+                                    <h2>Music</h2>
+                                    <p>Explore my public playlist</p>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- GitHub Tile -->
+                        <div class="tile">
+                            <a href="https://github.com/ErikDevelopment" class="tile-content">
+                                <div class="icon-wrapper">
+                                    <!-- GitHub Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 3v18h18"/>
+                                        <path d="m19 9-5 5-4-4-3 3"/>
+                                    </svg>
+                                </div>
+                                <div class="text-content">
+                                    <h2>GitHub</h2>
+                                    <p>View my open-source projects</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer>
+                <p>Entwickelt von <a href="https://github.com/ErikDevelopment" target="_blank">ErikDevelopment</a></p>
+            </footer>
+            </main>
+
+
+        </div>
+
+         <!-- Footer Section -->
+
+        <!-- Audio Element -->
+        <audio id="background-music" loop>
+            <source src="assets/music1.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

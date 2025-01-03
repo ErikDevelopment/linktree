@@ -1,0 +1,283 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/Raleway-Light.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  font-family: 'Raleway', sans-serif;
+  line-height: 160%;
+}
+
+body {
+  background-color: #16161D;
+  background-size: 100% auto;
+}
+
+.profile-container {
+  position: relative;
+  width: 120px;  /* Adjust based on your profile picture size */
+  height: 120px; /* Adjust based on your profile picture size */
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* Makes the profile picture round */
+}
+
+.icon-overlay {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Positioniert das Icon genau in der Mitte */
+  width: 270px; /* Adjust to your preferred icon size */
+  height: 270px; /* Adjust to your preferred icon size */
+  pointer-events: none;
+  z-index: 9999;
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .8;
+}
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+#vanta-bg {
+  z-index: 0px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  padding: 32px;
+  height: calc(120px + 32px);
+  color: white;
+  margin-top: 40px; /* Abstand nach oben hinzufügen */
+}
+
+main {
+  max-width: 580px;
+  width: 90%;
+  margin: 40px auto;
+}
+
+header img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+header div {
+  width: 120px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  padding: 4px;
+  background: rgba(26, 26, 36, 0.7); /* Gleiche Farbgebung wie die Kacheln */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Zarter Rand, passend zur Kachel */
+  transition: transform .3s;
+}
+
+header div:hover {
+  transform: scale(1.1);
+  background: rgba(30, 30, 42, 0.8); /* Etwas helleres Dunkelgrau bei Hover */
+}
+
+header h3 {
+  display: inline-block;
+  font-family: 'Raleway', sans-serif;  /* Du kannst hier auch eine andere Schriftart verwenden */
+  text-align: center;
+  padding-top: 12px;
+  color: white;
+  letter-spacing: 1px;
+  font-size: 2rem; /* Vergrößert den @lucasmellone Text */
+}
+
+header p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem; /* Vergrößert den Berufstitel */
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+  margin-top: 8px;  /* Verringert den Abstand */
+  margin-bottom: 16px; /* Verkleinert den Abstand zu den Kacheln */
+}
+
+section div {
+  background: transparent;
+  padding-top: 8px;
+  border-radius: 8px;
+}
+
+footer {
+  font-family: 'Raleway', sans-serif;
+  padding-top: 0px;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+  margin: auto;
+  letter-spacing: 1px;
+}
+
+footer a {
+  font-family: 'Raleway', sans-serif;
+  padding-top: 0px;
+  text-align: center;
+  font-size: 10px;
+  color: white;
+  margin: auto;
+  letter-spacing: 1px;
+}
+
+/* Start of animation */
+
+header div {
+  animation: fromTop .7s .2s backwards;
+}
+
+header h1 {
+  animation: fadeIn .7s .2s backwards;
+  animation-delay: .2s;
+}
+
+header h3 {
+  animation: fadeIn .7s .2s backwards;
+  animation-delay: .2s;
+}
+
+header p {
+  animation: fadeIn .7s .2s backwards;
+  animation-delay: .3s;
+}
+
+main {
+  animation: fadeIn .7s .2s backwards;
+  animation-delay: .7s;
+}
+
+footer {
+  animation: fadeIn .7s .2s backwards;
+  animation-delay: .9s;
+}
+
+@keyframes fromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px)
+  }
+  
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* End of animation */
+
+/* Start of accordion drop-menu style */
+
+/* End of accordion drop-menu style */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.tile {
+background: rgba(26, 26, 36, 0.7); /* Durchsichtigeres Dunkelgrau */
+border-radius: 12px;
+padding: 1.5rem;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+border: 1px solid rgba(255, 255, 255, 0.1); /* Zarter Rand für den Darkmode */
+}
+
+.tile:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Verstärkter Schatten für Hover */
+background: rgba(30, 30, 42, 0.8); /* Etwas helleres Dunkelgrau bei Hover */
+text-decoration: none;
+}
+
+.tile-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.icon-wrapper {
+  background: rgba(138, 120, 255, 0.1);
+  padding: 0.75rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #8a78ff;
+}
+
+.text-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #fff;
+}
+
+.text-content p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+}
+
+footer {
+margin-top: auto; /* Fügt den Footer immer an das Ende */
+text-align: center;
+padding: 16px 0;
+color: #F9F6EE;
+font-size: 18px; /* Schriftgröße etwas vergrößert */
+}
+
+footer a {
+color: #8a78ff;
+text-decoration: none;
+font-weight: bold;
+font-size: 20px; /* Größere Schriftgröße für den Link */
+}
+
+footer a:hover {
+text-decoration: underline;
+}
