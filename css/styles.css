@@ -23,16 +23,28 @@ body * {
     display: none !important;
 }
 
-/* Enter Screen */
 .enter-screen {
-    min-height: 100vh;
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative; /* Für absolute Positionierung der Kind-Elemente */
+    min-height: 100vh; /* Volle Höhe */
+    display: flex; /* Zentriert den Inhalt */
+    align-items: center; /* Vertikale Zentrierung */
+    justify-content: center; /* Horizontale Zentrierung */
+    overflow: hidden; /* Verhindert Überlauf */
+}
+
+.background-image {
+    position: absolute; /* Hintergrundbild überlagert alles */
+    top: 0;
+    left: 0;
+    width: 100%; /* Füllt den gesamten Container */
+    height: 100%; /* Füllt den gesamten Container */
+    object-fit: cover; /* Passt das Bild an */
+    z-index: 0; /* Legt das Bild unter den Button */
 }
 
 #enter-button {
+    position: relative; /* Bleibt über dem Bild */
+    z-index: 1; /* Überlagert das Hintergrundbild */
     padding: 1rem 2rem;
     font-size: 1.5rem;
     color: white;
