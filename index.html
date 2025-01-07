@@ -21,11 +21,15 @@
             <img src="assets/volume-low-white-icon.png" alt="Volume" class="volume-icon">
             <input type="range" id="volume-slider" class="volume-slider hidden" min="0" max="1" step="0.01" value="0.5">
         </div>
+
         <!-- Hintergrund Video -->
-        <video id="bg-video" muted loop autoplay poster="./assets/poster.png">
-        <!-- <source src="https://github.com/lknknm/link-in-bio/raw/main/assets/links-bg.webm" type="video/webm"> -->
-        <source src="assets/video3.mp4" type="video/mp4">
+        <video id="bg-video" muted loop autoplay poster="./assets/mobile-background.jpg">
+            <source src="assets/video3.mp4" type="video/mp4">
         </video>
+
+        <!-- Poster für mobile Geräte (wird durch JavaScript ersetzt) -->
+        <img src="assets/mobile-background.jpg" alt="Poster" id="mobile-poster" style="display:none;">
+
         <div class="overlay"></div>
         <!-- Your existing content -->
         <div id="vanta-bg">
@@ -62,23 +66,6 @@
                             </a>
                         </div>
 
-                        <!-- Music Tile -->
-                        <div class="tile">
-                            <a href="https://open.spotify.com/user/h8vqkv26638aya6oi6hzc9ndi?si=32952e33a6fb4eb7" class="tile-content">
-                                <div class="icon-wrapper">
-                                    <!-- Music Icon -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"/>
-                                        <circle cx="17" cy="7" r="5"/>
-                                    </svg>
-                                </div>
-                                <div class="text-content">
-                                    <h2>Music</h2>
-                                    <p>Explore my public playlist</p>
-                                </div>
-                            </a>
-                        </div>
-
                         <!-- GitHub Tile -->
                         <div class="tile">
                             <a href="https://github.com/ErikDevelopment" class="tile-content">
@@ -95,6 +82,24 @@
                                 </div>
                             </a>
                         </div>
+
+                        <!-- Music Tile -->                       
+                        <div class="tile">
+                            <a href="https://open.spotify.com/user/h8vqkv26638aya6oi6hzc9ndi?si=32952e33a6fb4eb7" class="tile-content">
+                                <div class="icon-wrapper">
+                                    <!-- Music Icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m12 8-9.04 9.06a2.82 2.82 0 1 0 3.98 3.98L16 12"/>
+                                        <circle cx="17" cy="7" r="5"/>
+                                    </svg>
+                                </div>
+                                <div class="text-content">
+                                    <h2>Spotify</h2>
+                                    <p>Explore my public playlist</p>
+                                </div>
+                            </a>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -114,6 +119,7 @@
         </audio>
     </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/volumen.js"></script>
+    <script src="js/viewport.js"></script>
 </body>
 </html>
