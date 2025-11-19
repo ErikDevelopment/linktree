@@ -1,51 +1,49 @@
-// DOM Elements
-const enterScreen = document.getElementById('enter-screen');
-const mainContent = document.getElementById('main-content');
-const enterButton = document.getElementById('enter-button');
-const volumeControl = document.getElementById('volume-control');
-const volumeSlider = document.getElementById('volume-slider');
-const volumeIcon = document.querySelector('.volume-icon'); // Icon-Element
-const backgroundMusic = document.getElementById('background-music');
+document.addEventListener('DOMContentLoaded', () => {
 
-// Initial volume
-backgroundMusic.volume = 0.5;
+    const enterScreen = document.getElementById('enter-screen');
+    const enterButton = document.getElementById('enter-button');
+    const mainContent = document.getElementById('main-content');
 
-// Enter button click handler
-enterButton.addEventListener('click', () => {
-    enterScreen.classList.add('hidden');
-    mainContent.classList.remove('hidden');
-    backgroundMusic.play();
-});
+    const music = document.getElementById("background-music");
+    const toggle = document.getElementById("volume-toggle");
+    const slider = document.getElementById("volume-slider");
 
-// Volume control hover
-volumeControl.addEventListener('mouseenter', () => {
-    volumeSlider.classList.remove('hidden');
-});
+    // --- ENTER BUTTON ---
+    if (enterButton && enterScreen && mainContent) {
+        enterButton.addEventListener('click', () => {
 
-volumeControl.addEventListener('mouseleave', () => {
-    volumeSlider.classList.add('hidden');
-});
+            enterScreen.classList.add('hidden');
+            mainContent.classList.remove('hidden');
 
-// Volume slider change
-volumeSlider.addEventListener('input', (e) => {
-    const value = parseFloat(e.target.value);
-    backgroundMusic.volume = value;
+            // Musik starten
+            let startVolume = parseFloat(slider.value) || 0.5;
+            music.volume = startVolume;
 
-    // Update the icon based on volume level
-    if (value === 0) {
-        volumeIcon.src = 'assets/volumen-muted.png'; // Mute Icon
-    } else {
-        volumeIcon.src = 'assets/volume-low-white-icon.png'; // Normal Icon
+            const playPromise = music.play();
+            if (playPromise) {
+                playPromise.catch(err => console.warn("Music play failed:", err));
+            }
+
+            // Video starten
+            const bgVideo = document.getElementById('bg-video');
+            if (bgVideo) {
+                bgVideo.play().catch(err => console.log("Video play failed:", err));
+            }
+        });
     }
-});
 
-// Toggle mute/unmute on icon click
-volumeIcon.addEventListener('click', () => {
-    if (backgroundMusic.volume === 0) {
-        backgroundMusic.volume = 0.5;  // Set to previous volume (can be any value)
-        volumeIcon.src = 'assets/volume-low-white-icon.png'; // Normal Icon
-    } else {
-        backgroundMusic.volume = 0;  // Mute
-        volumeIcon.src = 'assets/volumen-muted.png'; // Mute Icon
+    // --- SLIDER UPDATES ---
+    slider.addEventListener("input", () => {
+        const vol = parseFloat(slider.value);
+        music.volume = vol;
+
+        updateEmoji(vol);
+    });
+
+    // Emoji wechseln
+    function updateEmoji(vol) {
+        if (vol === 0) toggle.textContent = "🔇";
+        else if (vol < 0.4) toggle.textContent = "🔉";
+        else toggle.textContent = "🔊";
     }
 });
